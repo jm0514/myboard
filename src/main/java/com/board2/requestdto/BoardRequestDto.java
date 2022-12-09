@@ -14,23 +14,18 @@ public class BoardRequestDto {
     @NotBlank(message = "제목을 입력하세요.")
     private String title;
 
-    @NotBlank(message = "이름을 입력하세요.")
-    private String writer;
-
     @NotBlank(message = "내용을 입력하세요.")
     private String content;
 
     @Builder
     public BoardRequestDto(String title, String writer, String content) {
         this.title = title;
-        this.writer = writer;
         this.content = content;
     }
 
     public Board ToEntity(){
         return Board.builder()
                 .title(this.title)
-                .writer(this.writer)
                 .content(this.content)
                 .build();
     }
