@@ -1,5 +1,6 @@
 package com.board2.requestdto;
 
+import com.board2.entity.Board;
 import lombok.*;
 
 import javax.validation.constraints.NotBlank;
@@ -24,6 +25,14 @@ public class RequestDto {
         this.title = title;
         this.writer = writer;
         this.content = content;
+    }
+
+    public Board ToEntity(){
+        return Board.builder()
+                .title(this.title)
+                .writer(this.writer)
+                .content(this.content)
+                .build();
     }
 
 }
