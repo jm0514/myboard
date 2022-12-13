@@ -5,14 +5,14 @@ import lombok.Builder;
 import lombok.Getter;
 
 @Getter
-public class ResponseDto {
+public class BoardResponseDto {
 
     private Long id;
     private String title;
     private String writer;
     private String content;
 
-    public ResponseDto(Board board) {
+    public BoardResponseDto(Board board) {
         this.id = board.getId();
         this.title = board.getTitle();
         this.writer = board.getWriter();
@@ -20,7 +20,7 @@ public class ResponseDto {
     }
 
     @Builder
-    public ResponseDto(Long id, String title, String writer, String content) {
+    public BoardResponseDto(Long id, String title, String writer, String content) {
         this.id = id;
         this.title = title;
         this.writer = writer;

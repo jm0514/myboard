@@ -1,8 +1,7 @@
 package com.board2.service;
 
-import com.board2.entity.Board;
 import com.board2.repository.BoardRepository;
-import com.board2.requestdto.RequestDto;
+import com.board2.requestdto.BoardRequestDto;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -16,7 +15,7 @@ public class BoardService {
     private final BoardRepository boardRepository;
 
     @Transactional
-    public void write(RequestDto requestDto){
+    public void write(BoardRequestDto requestDto){
         boardRepository.save(requestDto.ToEntity());
     }
 }
